@@ -5,11 +5,11 @@ services:
     command:
       - serve
     environment:
-      - TZ=UTC    # optional: Change to your desired timezone
-    user: UID:GID # optional: Set custom user/group or uid/gid
+      - TZ=Asia/Shanghai    # 上海时区
+    # user: UID:GID # optional: Set custom user/group or uid/gid (已注释，以 root 运行)
     volumes:
       - /var/cache/ntfy:/var/cache/ntfy
       - /etc/ntfy:/etc/ntfy
     ports:
-      - 80:80
+      - 18090:80
     restart: unless-stopped
